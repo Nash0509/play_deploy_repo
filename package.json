@@ -1,0 +1,21 @@
+{
+  "name": "deploy_play",
+  "version": "1.0.0",
+  "description": "Dummy backend for the deploy play",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Play",
+    "deploy"
+  ],
+  "author": "Nishant Singh",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14"
+  }
+}
