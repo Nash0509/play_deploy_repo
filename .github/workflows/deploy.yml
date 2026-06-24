@@ -19,7 +19,7 @@ jobs:
           script: |
             echo "--- Pulling latest BE code ---"
             cd /home/ec2-user/play_deploy_repo
-            git pull origin master
+            git pull origin main
 
             echo "--- Installing dependencies ---"
             npm install --production
