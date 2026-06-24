@@ -9,7 +9,7 @@ app.use(cors())
 
 app.get("/", (req, res) => {
   return res.status(200).json({
-    dashboardContent: "Yo-Yo!! Hello you! Welcome to the live dashboard.",
+    dashboardContent: "Yo-Yo-Yo!! Hello you! Welcome to the live dashboard.",
   });
 });
 
