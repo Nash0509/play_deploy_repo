@@ -1,0 +1,30 @@
+name: Deploy Backend
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: SSH into EC2 and Deploy Backend
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ec2-user
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            echo "--- Pulling latest BE code ---"
+            cd /home/ec2-user/play_deploy_repo
+            git pull origin master
+
+            echo "--- Installing dependencies ---"
+            npm install --production
+
+            echo "--- Restarting app with PM2 ---"
+            pm2 restart backend
+
+            echo "--- BE Deployment Done ✅ ---"
